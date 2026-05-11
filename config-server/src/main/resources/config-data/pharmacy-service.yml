@@ -1,0 +1,30 @@
+# Cấu hình pharmacy-service — được Config Server phục vụ (native: classpath:/config-data)
+app:
+  branch-name: Chi nhánh mặc định
+  hotline: "1900-xxxx"
+
+pharmacy:
+  vat-rate: 10
+  e-invoice:
+    gateway-url: http://127.0.0.1:1/e-invoice/mock
+
+resilience4j:
+  ratelimiter:
+    rateLimiterAspectOrder: 1
+    instances:
+      eInvoiceRateLimit:
+        limitForPeriod: 5
+        limitRefreshPeriod: 10s
+        timeoutDuration: 0s
+  retry:
+    retryAspectOrder: 2
+    instances:
+      eInvoiceRetry:
+        maxAttempts: 4
+        waitDuration: 2s
+        enableExponentialBackoff: false
+        retryExceptions:
+          - java.net.ConnectException
+          - java.net.SocketTimeoutException
+          - java.net.UnknownHostException
+          - org.springframework.web.client.ResourceAccessException

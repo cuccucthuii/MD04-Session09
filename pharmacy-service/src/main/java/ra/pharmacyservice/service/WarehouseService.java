@@ -13,7 +13,7 @@ public class WarehouseService {
 
     @CircuitBreaker(
             name = "warehouseCB",
-            fallbackMethod = "fallbackCheckStock"
+            fallbackMethod = "checkWarehouseFallback"
     )
     public String checkStock() {
 
@@ -22,8 +22,7 @@ public class WarehouseService {
         return restTemplate.getForObject(url, String.class);
     }
 
-    public String fallbackCheckStock(Exception ex) {
-
-        return "Warehouse service is unavailable!";
+    public String checkWarehouseFallback(Exception e) {
+        return "Không thể kết nối kho tổng. Hệ thống sẽ sử dụng dữ liệu tồn kho cục bộ để tiếp tục giao dịch";
     }
 }
