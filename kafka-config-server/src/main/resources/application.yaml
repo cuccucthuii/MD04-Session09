@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: kafka-config-server
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    admin:
+      auto-create: true    # bật để NewTopic beans được KafkaAdmin tạo khi startup
+
+pharmacy:
+  kafka:
+    topics:
+      stock-events:
+        name: medicine-stock-events
+        partitions: 3
+        replication-factor: 1
+      price-updates:
+        name: medicine-price-updates
+        partitions: 1
+        replication-factor: 1
+      notifications:
+        name: pharmacy-notifications
+        partitions: 2
+        replication-factor: 1

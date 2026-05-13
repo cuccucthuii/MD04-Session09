@@ -1,0 +1,6 @@
+-- Kiem tra API bills/sell
+docker exec -it kafka-pharmacy /opt/kafka/bin/kafka-console-consumer.sh \
+  --bootstrap-server localhost:9092 \
+  --topic medicine-stock-events \
+  --from-beginning \
+  --property print.key=true

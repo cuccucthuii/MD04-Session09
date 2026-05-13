@@ -1,4 +1,4 @@
-package ra.pharmacyservice;
+package ra.notificationservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,10 +9,9 @@ import org.springframework.kafka.test.context.EmbeddedKafka;
         partitions = 3,
         topics = {"medicine-stock-events"}
 )
-class PharmacyServiceApplicationTests {
+class NotificationServiceApplicationTests {
 
     @Test
     void contextLoads() {
     }
-
 }

@@ -4,7 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Session09.iml" filepath="$PROJECT_DIR$/.idea/Session09.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inventory-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/inventory-service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/notification-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/notification-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/notification-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/notification-service.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/pharmacy-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/pharmacy-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pharmacy-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/pharmacy-service.test.iml" />
     </modules>
   </component>
 </project>

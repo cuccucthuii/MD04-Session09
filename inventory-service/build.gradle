@@ -6,7 +6,7 @@ plugins {
 
 group = 'ra'
 version = '0.0.1-SNAPSHOT'
-description = 'pharmacy-service'
+description = 'inventory-service'
 
 java {
     toolchain {
@@ -18,32 +18,20 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    set('springCloudVersion', "2025.1.1")
-}
-
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-json'
     implementation 'org.springframework.boot:spring-boot-starter-kafka'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
-    implementation 'io.github.resilience4j:resilience4j-spring-boot3'
-    implementation 'org.springframework.boot:spring-boot-starter-aspectj'
+    implementation 'com.h2database:h2'
+    implementation 'org.postgresql:postgresql'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
     testCompileOnly 'org.projectlombok:lombok'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testAnnotationProcessor 'org.projectlombok:lombok'
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
 }
 
 tasks.named('test') {
