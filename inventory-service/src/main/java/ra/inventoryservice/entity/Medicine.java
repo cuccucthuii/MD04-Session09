@@ -25,4 +25,7 @@ public class Medicine {
 
     @Column(nullable = false)
     private Integer stock;
+
+    @Column(nullable = false)
+    private Double price;
 }
